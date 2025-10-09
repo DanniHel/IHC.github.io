@@ -36,59 +36,62 @@
     </div>
 
     <!-- 📨 FORMULARIO DE MENSAJES -->
-    <section class="seccion">
-      <h2><i class="fas fa-comments"></i> Enviar Mensaje a Padres</h2>
-      <p style="text-align:center; margin-bottom:15px;">Selecciona los niños que recibirán el mensaje y escribe tu comunicación.</p>
+<section class="seccion">
+  <h2><i class="fas fa-comments"></i> Enviar Mensaje a Padres</h2>
+  <p class="subtexto">Selecciona los niños que recibirán el mensaje y escribe tu comunicación.</p>
 
-      <form class="formulario-actividad">
-        <!-- Checklist de destinatarios -->
-        <fieldset class="checklist">
-          <legend>Destinatarios:</legend>
-          <label><input type="checkbox" id="todos" name="destinatarios" value="todos" onclick="toggleTodos(this)"> Todos los niños</label><br>
-          <label><input type="checkbox" name="destinatarios" value="nino1"> Juan Pérez</label><br>
-          <label><input type="checkbox" name="destinatarios" value="nino2"> María López</label><br>
-          <label><input type="checkbox" name="destinatarios" value="nino3"> Carlos García</label><br>
-          <label><input type="checkbox" name="destinatarios" value="nino4"> Sofía Fernández</label>
-        </fieldset>
-
-        <!-- Mensaje -->
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Escribe el mensaje que deseas enviar" required></textarea>
-
-        <!-- Adjuntar imagen -->
-        <label for="imagen">Adjuntar imagen:</label>
-        <input type="file" id="imagen" name="imagen" accept="image/*">
-
-        <!-- Botones -->
-        <div class="acciones">
-          <button type="submit" class="btn-primario">
-            <i class="fas fa-paper-plane"></i> Enviar Mensaje
-          </button>
-          <button type="reset" class="btn-secundario">
-            <i class="fas fa-eraser"></i> Limpiar
-          </button>
-        </div>
-      </form>
-    </section>
-
-    <!-- 🗂️ HISTORIAL DE MENSAJES ENVIADOS -->
-    <section class="seccion">
-      <h2><i class="fas fa-history"></i> Historial de Mensajes</h2>
-
-      <div class="lista-avisos">
-        <div class="aviso general">
-          <h3>👩‍💼 Mensaje a Juan Pérez y María López</h3>
-          <p>Recordatorio: Traer ropa de cambio el jueves.</p>
-          <small>Enviado el: 05/10/2025 09:15 a.m.</small>
-        </div>
-
-        <div class="aviso recordatorio">
-          <h3>👩‍💼 Mensaje a todos los niños</h3>
-          <p>Se enviará la foto escolar este lunes. Traer uniforme completo.</p>
-          <small>Enviado el: 04/10/2025 03:00 p.m.</small>
-        </div>
+  <form class="formulario-actividad">
+    <!-- Checklist de destinatarios -->
+    <fieldset class="checklist">
+      <legend>Destinatarios:</legend>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="todos" name="destinatarios" value="todos" onclick="toggleTodos(this)"> Todos los niños</label>
+        <label><input type="checkbox" name="destinatarios" value="nino1"> Juan Pérez</label>
+        <label><input type="checkbox" name="destinatarios" value="nino2"> María López</label>
+        <label><input type="checkbox" name="destinatarios" value="nino3"> Carlos García</label>
+        <label><input type="checkbox" name="destinatarios" value="nino4"> Sofía Fernández</label>
       </div>
-    </section>
+    </fieldset>
+
+    <!-- Mensaje -->
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" placeholder="Escribe el mensaje que deseas enviar" required></textarea>
+
+    <!-- Adjuntar imagen -->
+    <label for="imagen">Adjuntar imagen:</label>
+    <input type="file" id="imagen" name="imagen" accept="image/*">
+
+    <!-- Botones -->
+    <div class="acciones">
+      <button type="submit" class="btn-primario">
+        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+      </button>
+      <button type="reset" class="btn-secundario">
+        <i class="fas fa-eraser"></i> Limpiar
+      </button>
+    </div>
+  </form>
+</section>
+
+<!-- 🗂️ HISTORIAL DE MENSAJES ENVIADOS -->
+<section class="seccion">
+  <h2><i class="fas fa-history"></i> Historial de Mensajes</h2>
+
+  <div class="lista-avisos">
+    <article class="aviso">
+      <h3><i class="fas fa-user"></i> Juan Pérez y María López</h3>
+      <p>📌 Recordatorio: Traer ropa de cambio el jueves.</p>
+      <small><i class="fas fa-clock"></i> 05/10/2025 - 09:15 a.m.</small>
+    </article>
+
+    <article class="aviso aviso-general">
+      <h3><i class="fas fa-users"></i> Todos los niños</h3>
+      <p>🖼️ Se enviará la foto escolar este lunes. Traer uniforme completo.</p>
+      <small><i class="fas fa-clock"></i> 04/10/2025 - 03:00 p.m.</small>
+    </article>
+  </div>
+</section>
+
 
   </main>
 

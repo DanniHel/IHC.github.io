@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gestión de Avisos - PRONOEI</title>
 
-  <!-- Estilos globales -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../public/css/estilos.css">
+  <!-- Fuentes y estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../public/css/estilos.css" />
   <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
 </head>
-<body>
 
+<body>
   <!-- 🔹 ENCABEZADO -->
-  <header class="encabezado">
+  <header class="encabezado sombra">
     <div class="logo">
-      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI" />
+      <h1>PRONOEI</h1>
     </div>
     <div class="usuario">
       <span>👩‍💼 Coordinador: <strong>Lucía Ramos</strong></span>
-      <button class="btn-salir" onclick="window.location.href='../index.html';">
-          <i class="fas fa-sign-out-alt"></i> Salir
+      <button class="btn-salir" onclick="window.location.href='../index.html'">
+        <i class="fas fa-sign-out-alt"></i> Salir
       </button>
     </div>
   </header>
@@ -35,13 +36,14 @@
       </button>
     </div>
 
-    <!-- 📝 FORMULARIO PARA NUEVO AVISO -->
-    <section class="seccion">
+    <!-- 📝 CREAR NUEVO AVISO -->
+    <section class="seccion tarjeta">
       <h2><i class="fas fa-bullhorn"></i> Crear Nuevo Aviso</h2>
+      <p>Redacta y publica un aviso visible para las madres usuarias y el personal del PRONOEI.</p>
 
       <form class="formulario-actividad">
         <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo" placeholder="Escribe un título" required>
+        <input type="text" id="titulo" name="titulo" placeholder="Escribe un título" required />
 
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" placeholder="Escribe el mensaje del aviso" required></textarea>
@@ -55,7 +57,7 @@
         </select>
 
         <label for="visible_hasta">Visible hasta:</label>
-        <input type="date" id="visible_hasta" name="visible_hasta">
+        <input type="date" id="visible_hasta" name="visible_hasta" />
 
         <div class="acciones">
           <button type="submit" class="btn-primario">
@@ -68,11 +70,11 @@
       </form>
     </section>
 
-    <!-- 📢 LISTADO DE AVISOS RECIENTES -->
-    <section class="seccion">
+    <!-- 📢 AVISOS RECIENTES -->
+    <section class="seccion tarjeta">
       <h2><i class="fas fa-list"></i> Avisos Recientes</h2>
-
       <div class="lista-avisos">
+
         <div class="aviso general">
           <h3>📝 Reunión mensual de coordinación</h3>
           <p>La reunión será el lunes a las 10:00 a.m.</p>
