@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguridad y Roles - PRONOEI</title>
+
+  <!-- Estilos globales -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/estilos.css">
+  <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
+</head>
+<body>
+
+  <!-- 🔹 ENCABEZADO -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+    </div>
+    <div class="usuario">
+      <span>👩‍💼 Coordinador: <strong>Lucía Ramos</strong></span>
+      <button class="btn-salir" onclick="window.location.href='../index.html';">
+          <i class="fas fa-sign-out-alt"></i> Salir
+      </button>
+    </div>
+  </header>
+
+  <!-- 🔸 CONTENEDOR PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- 🔙 BOTÓN VOLVER -->
+    <div class="volver-contenedor">
+      <button class="btn-volver" onclick="window.location.href='panel_principal.html'">
+        <i class="fas fa-arrow-left"></i> Volver al Panel
+      </button>
+    </div>
+
+    <!-- 🔐 SECCIÓN DE ROLES -->
+    <section class="seccion">
+      <h2><i class="fas fa-lock"></i> Seguridad y Roles</h2>
+      <p style="text-align:center; margin-bottom:20px;">Gestiona los roles del sistema y asigna permisos a los usuarios del centro.</p>
+
+      <!-- 👥 LISTA DE ROLES -->
+      <div class="tabla-roles">
+        <h3><i class="fas fa-users-cog"></i> Roles Existentes</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Rol</th>
+              <th>Descripción</th>
+              <th>Usuarios Asignados</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coordinador</td>
+              <td>Encargado del centro PRONOEI</td>
+              <td>1</td>
+              <td>
+                <button class="btn-accion"><i class="fas fa-edit"></i> Editar</button>
+                <button class="btn-accion"><i class="fas fa-trash-alt"></i> Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Padre</td>
+              <td>Padre de familia</td>
+              <td>15</td>
+              <td>
+                <button class="btn-accion"><i class="fas fa-edit"></i> Editar</button>
+                <button class="btn-accion"><i class="fas fa-trash-alt"></i> Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Asistente</td>
+              <td>Apoyo en registro o comunicación</td>
+              <td>3</td>
+              <td>
+                <button class="btn-accion"><i class="fas fa-edit"></i> Editar</button>
+                <button class="btn-accion"><i class="fas fa-trash-alt"></i> Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ➕ FORMULARIO AGREGAR NUEVO ROL -->
+      <div class="formulario-rol">
+        <h3><i class="fas fa-plus-circle"></i> Agregar Nuevo Rol</h3>
+        <form>
+          <div class="campo-form">
+            <label for="nombre-rol">Nombre del Rol:</label>
+            <input type="text" id="nombre-rol" placeholder="Ej: Supervisor">
+          </div>
+          <div class="campo-form">
+            <label for="descripcion-rol">Descripción:</label>
+            <textarea id="descripcion-rol" placeholder="Descripción del rol"></textarea>
+          </div>
+          <button type="submit" class="btn-primario"><i class="fas fa-save"></i> Guardar Rol</button>
+        </form>
+      </div>
+
+      <!-- 🔄 ASIGNAR ROLES A USUARIOS -->
+      <div class="asignar-roles">
+        <h3><i class="fas fa-user-shield"></i> Asignar Roles a Usuarios</h3>
+        <form>
+          <div class="campo-form">
+            <label for="usuario-rol">Usuario:</label>
+            <select id="usuario-rol">
+              <option>Juan Pérez</option>
+              <option>María López</option>
+              <option>Carlos García</option>
+            </select>
+          </div>
+          <div class="campo-form">
+            <label for="rol-asignar">Rol:</label>
+            <select id="rol-asignar">
+              <option>Coordinador</option>
+              <option>Padre</option>
+              <option>Asistente</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primario"><i class="fas fa-user-check"></i> Asignar Rol</button>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ⚙️ PIE -->
+  <footer class="pie">
+    <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
+  </footer>
+
+  <script src="../public/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informes Individuales - PRONOEI</title>
+
+  <!-- Estilos globales -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/estilos.css">
+  <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
+</head>
+<body>
+
+  <!-- 🔹 ENCABEZADO -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+    </div>
+    <div class="usuario">
+      <span>👩‍💼 Coordinador: <strong>Lucía Ramos</strong></span>
+      <button class="btn-salir" onclick="window.location.href='../index.html';">
+          <i class="fas fa-sign-out-alt"></i> Salir
+      </button>
+    </div>
+  </header>
+
+  <!-- 🔸 CONTENEDOR PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- 🔙 BOTÓN VOLVER -->
+    <div class="volver-contenedor">
+      <button class="btn-volver" onclick="window.location.href='panel_principal.html'">
+        <i class="fas fa-arrow-left"></i> Volver al Panel
+      </button>
+    </div>
+
+    <!-- 📄 SECCIÓN DE INFORMES -->
+    <section class="seccion">
+      <h2><i class="fas fa-file-alt"></i> Informes Individuales</h2>
+      <p style="text-align:center; margin-bottom:15px;">Selecciona un niño para visualizar su informe completo, con asistencia, actividades y observaciones.</p>
+
+      <!-- Selector de niños -->
+      <label for="seleccion-nino"><i class="fas fa-child"></i> Seleccionar Niño/a:</label>
+      <select id="seleccion-nino" class="select-nino">
+        <option value="">-- Selecciona un niño --</option>
+        <option value="nino1">Juan Pérez</option>
+        <option value="nino2">María López</option>
+        <option value="nino3">Carlos García</option>
+        <option value="nino4">Sofía Fernández</option>
+      </select>
+
+      <!-- Informe individual -->
+      <div id="informe-individual" class="informe" style="display:none;">
+
+        <h3>👦 Juan Pérez</h3>
+        <div class="informacion-nino">
+          <p><strong>Edad:</strong> 4 años</p>
+          <p><strong>Centro:</strong> PRONOEI N° 12</p>
+          <p><strong>Observaciones:</strong> Muy participativo y colaborador en actividades grupales.</p>
+        </div>
+
+        <h4>📋 Asistencia</h4>
+        <table class="tabla-informes">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Entrada</th>
+              <th>Salida</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01/10/2025</td>
+              <td>08:00</td>
+              <td>12:00</td>
+              <td>Presente</td>
+            </tr>
+            <tr>
+              <td>02/10/2025</td>
+              <td>08:05</td>
+              <td>12:00</td>
+              <td>Tarde</td>
+            </tr>
+            <tr>
+              <td>03/10/2025</td>
+              <td>08:00</td>
+              <td>12:00</td>
+              <td>Presente</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>🎨 Actividades</h4>
+        <ul class="lista-actividades">
+          <li>🖌️ Pintura libre</li>
+          <li>⚽ Juegos al aire libre</li>
+          <li>🍎 Taller de alimentación saludable</li>
+        </ul>
+
+        <!-- Botón exportar/imprimir -->
+        <button class="btn-primario" onclick="window.print()">
+          <i class="fas fa-print"></i> Imprimir Informe
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ⚙️ PIE -->
+  <footer class="pie">
+    <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
+  </footer>
+
+  <script>
+    // Mostrar informe según el niño seleccionado
+    const selectNino = document.getElementById('seleccion-nino');
+    const informe = document.getElementById('informe-individual');
+
+    selectNino.addEventListener('change', () => {
+      if(selectNino.value) {
+        informe.style.display = 'block';
+        // Aquí se podría cargar dinámicamente la info desde la base de datos
+      } else {
+        informe.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

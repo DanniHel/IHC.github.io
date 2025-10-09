@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Actividades - PRONOEI</title>
+
+  <!-- Estilos globales -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/estilos.css">
+  <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
+</head>
+<body>
+
+  <!-- 🔹 ENCABEZADO -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+    </div>
+    <div class="usuario">
+      <span>👩‍💼 Coordinador: <strong>Lucía Ramos</strong></span>
+      <button class="btn-salir" onclick="window.location.href='../index.html';">
+          <i class="fas fa-sign-out-alt"></i> Salir
+        </button>
+    </div>
+  </header>
+
+  <!-- 🔸 CONTENEDOR PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- 🔙 BOTÓN VOLVER -->
+    <div class="volver-contenedor">
+      <button class="btn-volver" onclick="window.location.href='panel_principal.html'">
+        <i class="fas fa-arrow-left"></i> Volver al Panel
+      </button>
+    </div>
+
+    <!-- 🖍️ FORMULARIO DE ACTIVIDADES -->
+    <section class="seccion">
+      <h2><i class="fas fa-child"></i> Registro de Actividades</h2>
+      <p>Registra las actividades realizadas por los niños/as y sube fotos del momento.</p>
+
+      <form class="formulario-actividad" enctype="multipart/form-data">
+        
+        <label for="nino">Niño/a:</label>
+        <select id="nino" name="nino" required>
+          <option value="">Seleccionar niño/a</option>
+          <option>Sofía López</option>
+          <option>Mateo García</option>
+        </select>
+
+        <label for="actividad">Actividad:</label>
+        <select id="actividad" name="actividad" required>
+          <option value="">Seleccionar actividad</option>
+          <option>Educativa</option>
+          <option>Recreativa</option>
+          <option>Alimentación</option>
+          <option>Otro</option>
+        </select>
+
+        <label for="observacion">Observación:</label>
+        <textarea id="observacion" name="observacion" placeholder="Escribe aquí detalles de la actividad"></textarea>
+
+        <label for="fotos">Subir fotos:</label>
+        <input type="file" id="fotos" name="fotos[]" accept="image/*" multiple>
+
+        <div class="acciones">
+          <button type="submit" class="btn-primario">
+            <i class="fas fa-save"></i> Guardar Actividad
+          </button>
+          <button type="button" class="btn-secundario">
+            <i class="fas fa-file-export"></i> Exportar
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ⚙️ PIE -->
+  <footer class="pie">
+    <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
+  </footer>
+
+  <script src="../public/js/scripts.js"></script>
+</body>
+</html>

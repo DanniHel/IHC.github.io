@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Coordinador - PRONOEI</title>
+
+    <!-- Fuente y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/css/estilos.css">
+    <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
+</head>
+<body>
+
+    <!-- 🔹 ENCABEZADO -->
+    <header class="encabezado sombra">
+        <div class="logo">
+            <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+            <h1></h1>
+        </div>
+        <div class="usuario">
+            <span><i class="fas fa-user-tie"></i> Coordinador: <strong>Lucía Ramos</strong></span>
+            <button class="btn-salir" onclick="window.location.href='../index.html';">
+                <i class="fas fa-sign-out-alt"></i> Salir
+            </button>
+        </div>
+    </header>
+
+    <!-- 🔸 CONTENEDOR PRINCIPAL -->
+    <main class="contenedor">
+
+        <!-- 🧭 PANEL PRINCIPAL -->
+        <section class="panel-botones tarjeta">
+            <h2>Panel del Coordinador</h2>
+            <p class="descripcion">Gestiona el centro, supervisa la asistencia y mantén comunicación con las familias.</p>
+
+            <div class="grid-botones">
+                <a href="gestion_usuarios.html" class="boton-panel">
+                    <i class="fas fa-users-cog icono"></i>
+                    <span>Gestión de Usuarios</span>
+                </a>
+
+                <a href="registro_asistencia.html" class="boton-panel">
+                    <i class="fas fa-clipboard-check icono"></i>
+                    <span>Registro de Asistencia</span>
+                </a>
+
+                <a href="registro_actividades.html" class="boton-panel">
+                    <i class="fas fa-child icono"></i>
+                    <span>Registro de Actividades</span>
+                </a>
+
+                <a href="avisos_generales.html" class="boton-panel">
+                    <i class="fas fa-bullhorn icono"></i>
+                    <span>Gestión de Avisos</span>
+                </a>
+
+                <a href="mensajeria_padres.html" class="boton-panel">
+                    <i class="fas fa-comments icono"></i>
+                    <span>Mensajería con Padres</span>
+                </a>
+                <!--
+                <a href="notificaciones.html" class="boton-panel">
+                    <i class="fas fa-bell icono"></i>
+                    <span>Notificaciones Automáticas</span>
+                </a>
+                -->
+                <a href="informes_individuales.html" class="boton-panel">
+                    <i class="fas fa-file-alt icono"></i>
+                    <span>Informes Individuales</span>
+                </a>
+
+                <a href="reportes_mensuales.html" class="boton-panel">
+                    <i class="fas fa-chart-line icono"></i>
+                    <span>Reportes Mensuales</span>
+                </a>
+
+                <a href="seguridad_roles.html" class="boton-panel">
+                    <i class="fas fa-lock icono"></i>
+                    <span>Seguridad y Roles</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 📢 AVISOS RECIENTES -->
+        <section class="avisos tarjeta">
+            <h3><i class="fas fa-clipboard-list"></i> Avisos Recientes</h3>
+            <ul class="lista-avisos">
+                <li><i class="fas fa-calendar-alt"></i> Capacitación interna el <strong>viernes 10:00 a.m.</strong></li>
+                <li><i class="fas fa-user-check"></i> Revisar registro de asistencia de la semana.</li>
+                <li><i class="fas fa-handshake"></i> Reunión con padres el <strong>sábado a las 4:00 p.m.</strong></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- ⚙️ PIE -->
+    <footer class="pie sombra">
+        <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
+    </footer>
+
+    <script src="../public/js/scripts.js"></script>
+</body>
+</html>

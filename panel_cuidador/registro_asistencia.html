@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Asistencia - PRONOEI</title>
+
+  <!-- Estilos globales -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/estilos.css">
+  <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
+</head>
+<body>
+
+  <!-- 🔹 ENCABEZADO -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+    </div>
+    <div class="usuario">
+      <span>👩‍💼 Coordinador: <strong>Lucía Ramos</strong></span>
+      <button class="btn-salir" onclick="window.location.href='../index.html';">
+          <i class="fas fa-sign-out-alt"></i> Salir
+      </button>
+    </div>
+  </header>
+
+  <!-- 🔸 CONTENEDOR PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- 🔙 BOTÓN VOLVER -->
+    <div class="volver-contenedor">
+      <button class="btn-volver" onclick="window.location.href='panel_principal.html'">
+          <i class="fas fa-arrow-left"></i> Volver al Panel
+      </button>
+    </div>
+
+    <!-- 🧾 SECCIÓN DE ASISTENCIA -->
+    <section class="seccion">
+      <h2><i class="fas fa-clipboard-check"></i> Registro de Asistencia</h2>
+      <p>Marca la asistencia diaria de los niños y niñas registrados en el centro.</p>
+    </section>
+
+    <!-- 📅 FORMULARIO DE FECHA -->
+    <section class="formulario-asistencia">
+      <form>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <button type="submit" class="btn-primario">
+          <i class="fas fa-search"></i> Consultar
+        </button>
+      </form>
+    </section>
+
+    <!-- 👧👦 TABLA DE ASISTENCIA -->
+    <section class="tabla-contenedor">
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre del Niño/a</th>
+            <th>Edad</th>
+            <th>Estado</th>
+            <th>Observación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Sofía López</td>
+            <td>4</td>
+            <td>
+              <select class="select-estado">
+                <option>Presente</option>
+                <option>Ausente</option>
+                <option>Tarde</option>
+              </select>
+            </td>
+            <td><input type="text" placeholder="Comentario opcional"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mateo García</td>
+            <td>5</td>
+            <td>
+              <select class="select-estado">
+                <option>Presente</option>
+                <option>Ausente</option>
+                <option>Tarde</option>
+              </select>
+            </td>
+            <td><input type="text" placeholder="Comentario opcional"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="acciones">
+        <button class="btn-primario"><i class="fas fa-save"></i> Guardar Asistencia</button>
+        <button class="btn-secundario"><i class="fas fa-file-export"></i> Exportar</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ⚙️ PIE -->
+  <footer class="pie">
+    <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
+  </footer>
+
+  <script src="../public/js/scripts.js"></script>
+</body>
+</html>

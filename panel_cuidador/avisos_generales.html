@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Avisos - PRONOEI</title>
+
+  <!-- Estilos globales -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/estilos.css">
+  <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
+</head>
+<body>
+
+  <!-- 🔹 ENCABEZADO -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+    </div>
+    <div class="usuario">
+      <span>👩‍💼 Coordinador: <strong>Lucía Ramos</strong></span>
+      <button class="btn-salir" onclick="window.location.href='../index.html';">
+          <i class="fas fa-sign-out-alt"></i> Salir
+      </button>
+    </div>
+  </header>
+
+  <!-- 🔸 CONTENEDOR PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- 🔙 BOTÓN VOLVER -->
+    <div class="volver-contenedor">
+      <button class="btn-volver" onclick="window.location.href='panel_principal.html'">
+        <i class="fas fa-arrow-left"></i> Volver al Panel
+      </button>
+    </div>
+
+    <!-- 📝 FORMULARIO PARA NUEVO AVISO -->
+    <section class="seccion">
+      <h2><i class="fas fa-bullhorn"></i> Crear Nuevo Aviso</h2>
+
+      <form class="formulario-actividad">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Escribe un título" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe el mensaje del aviso" required></textarea>
+
+        <label for="tipo">Tipo de aviso:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Seleccionar tipo</option>
+          <option value="general">General</option>
+          <option value="emergencia">Emergencia</option>
+          <option value="recordatorio">Recordatorio</option>
+        </select>
+
+        <label for="visible_hasta">Visible hasta:</label>
+        <input type="date" id="visible_hasta" name="visible_hasta">
+
+        <div class="acciones">
+          <button type="submit" class="btn-primario">
+            <i class="fas fa-save"></i> Guardar Aviso
+          </button>
+          <button type="button" class="btn-secundario">
+            <i class="fas fa-file-export"></i> Exportar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 📢 LISTADO DE AVISOS RECIENTES -->
+    <section class="seccion">
+      <h2><i class="fas fa-list"></i> Avisos Recientes</h2>
+
+      <div class="lista-avisos">
+        <div class="aviso general">
+          <h3>📝 Reunión mensual de coordinación</h3>
+          <p>La reunión será el lunes a las 10:00 a.m.</p>
+          <div class="acciones-aviso">
+            <button class="btn-secundario"><i class="fas fa-edit"></i> Editar</button>
+            <button class="btn-secundario"><i class="fas fa-trash-alt"></i> Eliminar</button>
+          </div>
+        </div>
+
+        <div class="aviso emergencia">
+          <h3>🚨 Corte de agua</h3>
+          <p>El centro estará sin agua mañana desde las 9:00 a.m. hasta las 3:00 p.m.</p>
+          <div class="acciones-aviso">
+            <button class="btn-secundario"><i class="fas fa-edit"></i> Editar</button>
+            <button class="btn-secundario"><i class="fas fa-trash-alt"></i> Eliminar</button>
+          </div>
+        </div>
+
+        <div class="aviso recordatorio">
+          <h3>📅 Traer ropa de cambio</h3>
+          <p>Recordatorio para todos los padres de familia.</p>
+          <div class="acciones-aviso">
+            <button class="btn-secundario"><i class="fas fa-edit"></i> Editar</button>
+            <button class="btn-secundario"><i class="fas fa-trash-alt"></i> Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ⚙️ PIE -->
+  <footer class="pie">
+    <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
+  </footer>
+
+  <script src="../public/js/scripts.js"></script>
+</body>
+</html>

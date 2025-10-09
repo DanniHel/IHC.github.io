@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensajería con Padres - PRONOEI</title>
+
+  <!-- Estilos globales -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/estilos.css">
+  <link rel="stylesheet" href="../public/fontawesome/css/all.css" />
+</head>
+<body>
+
+  <!-- 🔹 ENCABEZADO -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="../public/img/Imagen11.png" alt="Logo PRONOEI">
+    </div>
+    <div class="usuario">
+      <span>👩‍💼 Coordinador: <strong>Lucía Ramos</strong></span>
+      <button class="btn-salir" onclick="window.location.href='../index.html';">
+          <i class="fas fa-sign-out-alt"></i> Salir
+      </button>
+    </div>
+  </header>
+
+  <!-- 🔸 CONTENEDOR PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- 🔙 BOTÓN VOLVER -->
+    <div class="volver-contenedor">
+      <button class="btn-volver" onclick="window.location.href='panel_principal.html'">
+        <i class="fas fa-arrow-left"></i> Volver al Panel
+      </button>
+    </div>
+
+    <!-- 📨 FORMULARIO DE MENSAJES -->
+    <section class="seccion">
+      <h2><i class="fas fa-comments"></i> Enviar Mensaje a Padres</h2>
+      <p style="text-align:center; margin-bottom:15px;">Selecciona los niños que recibirán el mensaje y escribe tu comunicación.</p>
+
+      <form class="formulario-actividad">
+        <!-- Checklist de destinatarios -->
+        <fieldset class="checklist">
+          <legend>Destinatarios:</legend>
+          <label><input type="checkbox" id="todos" name="destinatarios" value="todos" onclick="toggleTodos(this)"> Todos los niños</label><br>
+          <label><input type="checkbox" name="destinatarios" value="nino1"> Juan Pérez</label><br>
+          <label><input type="checkbox" name="destinatarios" value="nino2"> María López</label><br>
+          <label><input type="checkbox" name="destinatarios" value="nino3"> Carlos García</label><br>
+          <label><input type="checkbox" name="destinatarios" value="nino4"> Sofía Fernández</label>
+        </fieldset>
+
+        <!-- Mensaje -->
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe el mensaje que deseas enviar" required></textarea>
+
+        <!-- Adjuntar imagen -->
+        <label for="imagen">Adjuntar imagen:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*">
+
+        <!-- Botones -->
+        <div class="acciones">
+          <button type="submit" class="btn-primario">
+            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+          </button>
+          <button type="reset" class="btn-secundario">
+            <i class="fas fa-eraser"></i> Limpiar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 🗂️ HISTORIAL DE MENSAJES ENVIADOS -->
+    <section class="seccion">
+      <h2><i class="fas fa-history"></i> Historial de Mensajes</h2>
+
+      <div class="lista-avisos">
+        <div class="aviso general">
+          <h3>👩‍💼 Mensaje a Juan Pérez y María López</h3>
+          <p>Recordatorio: Traer ropa de cambio el jueves.</p>
+          <small>Enviado el: 05/10/2025 09:15 a.m.</small>
+        </div>
+
+        <div class="aviso recordatorio">
+          <h3>👩‍💼 Mensaje a todos los niños</h3>
+          <p>Se enviará la foto escolar este lunes. Traer uniforme completo.</p>
+          <small>Enviado el: 04/10/2025 03:00 p.m.</small>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ⚙️ PIE -->
+  <footer class="pie">
+    <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
+  </footer>
+
+  <script>
+    // Función para seleccionar/deseleccionar todos los checkboxes
+    function toggleTodos(source) {
+      const checkboxes = document.querySelectorAll('input[name="destinatarios"]');
+      checkboxes.forEach(checkbox => {
+        if (checkbox !== source) checkbox.checked = source.checked;
+      });
+    }
+  </script>
+
+</body>
+</html>
