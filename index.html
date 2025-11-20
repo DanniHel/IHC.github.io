@@ -10,24 +10,45 @@
   <link rel="stylesheet" href="public/css/estilos.css">
   <link rel="stylesheet" href="public/fontawesome/css/all.css" />
   <style>
-    /* Estilo para el checkbox */
-    .politicas {
-      margin-top: 15px;
-      font-size: 0.9em;
-      display: flex;
-      align-items: center;
+    /* Modal básico */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1000; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
     }
-    .politicas input[type="checkbox"] {
-      margin-right: 10px;
-      width: 16px;
-      height: 16px;
+    .modal-contenido {
+      background-color: #fff;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 80%;
+      overflow-y: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
-    .politicas a {
-      color: var(--color-primario, #2e7d32);
-      text-decoration: none;
+    .modal-contenido h2 {
+      margin-top: 0;
+      color: #2e7d32;
     }
-    .politicas a:hover {
-      text-decoration: underline;
+    .modal-cerrar {
+      background-color: #c62828;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      float: right;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .modal-cerrar:hover {
+      background-color: #a02121;
     }
   </style>
 </head>
@@ -57,7 +78,9 @@
         <!-- ✅ Checkbox de políticas de privacidad -->
         <div class="politicas">
           <input type="checkbox" id="aceptoPoliticas">
-          <label for="aceptoPoliticas">Acepto las <a href="panel_cuidador/privacidad.html" target="_blank">Políticas de Privacidad</a></label>
+          <label for="aceptoPoliticas">
+            Acepto las <a href="#" id="verPoliticas">Políticas de Privacidad</a>
+          </label>
         </div>
 
         <button type="submit" class="btn-login" id="btnLogin" disabled>
@@ -71,12 +94,128 @@
     </div>
   </div>
 
+  <!-- Modal de Políticas -->
+  <div id="modalPoliticas" class="modal">
+    <div class="modal-contenido">
+      <h2>Política de Privacidad</h2>
+      <p class="descripcion">Sistema de Gestión de Asistencia y Comunicación para PRONOEI</p>
+
+      <h3>1. Introducción</h3>
+      <p>
+          La presente Política de Privacidad describe cómo se recopila, utiliza, almacena y protege la información personal de los usuarios del 
+          “Sistema de Gestión de Asistencia y Comunicación para PRONOEI” (en adelante, “la Plataforma”). 
+          Se aplica a todos los coordinadores, personal del centro, padres de familia y representantes legales.
+          La institución responsable del tratamiento de datos garantiza la seguridad, confidencialidad y privacidad conforme a la Ley N.° 29733 de Perú.
+      </p>
+
+      <h3>2. Datos personales que se recopilan</h3>
+      <h4>2.1. Datos de los padres o representantes</h4>
+      <ul>
+          <li>Nombres y apellidos</li>
+          <li>Número de DNI u otro documento</li>
+          <li>Teléfono y correo electrónico</li>
+          <li>Relación con el menor</li>
+          <li>Dirección u otros datos de contacto necesarios</li>
+      </ul>
+
+      <h4>2.2. Datos de los niños/as</h4>
+      <ul>
+          <li>Nombres y apellidos</li>
+          <li>Fecha de nacimiento</li>
+          <li>Información de salud relevante proporcionada voluntariamente</li>
+          <li>Participación en actividades educativas, recreativas y de alimentación</li>
+          <li>Asistencia, horarios de entrada y salida</li>
+          <li>Evaluaciones o reportes de progreso</li>
+      </ul>
+
+      <h4>2.3. Datos multimedia</h4>
+      <ul>
+          <li>Fotografías</li>
+          <li>Videos</li>
+          <li>Documentos relacionados con actividades educativas</li>
+      </ul>
+
+      <h4>2.4. Datos de uso y técnicos</h4>
+      <ul>
+          <li>Registros de actividad en la Plataforma</li>
+          <li>Rol y permisos asignados</li>
+          <li>Fecha y hora de accesos</li>
+          <li>Direcciones IP o dispositivo utilizado (cuando sea necesario para seguridad)</li>
+      </ul>
+
+      <h3>3. Finalidad del tratamiento de datos</h3>
+      <ul>
+          <li><strong>Gestión educativa y administrativa:</strong> registrar asistencia, actividades, alimentación, generar reportes y facilitar seguimiento.</li>
+          <li><strong>Comunicación con las familias:</strong> enviar avisos, notificaciones, mensajes, informar sobre la situación diaria del niño y remitir evidencia educativa.</li>
+          <li><strong>Seguridad y bienestar del menor:</strong> alertar sobre emergencias, mantener registro histórico para análisis e intervención educativa.</li>
+          <li><strong>Gestión interna de la Plataforma:</strong> control de accesos, auditorías de seguridad y mejora continua del servicio.</li>
+      </ul>
+
+      <h3>4. Base legal y consentimiento</h3>
+      <p>
+          El tratamiento de datos personales y multimedia se realiza únicamente con el consentimiento informado, expresado y documentado del padre, madre o tutor legal.
+          Sin consentimiento, la Plataforma no almacenará ni procesará información del niño/a ni del representante.
+      </p>
+
+      <h3>5. Conservación de los datos</h3>
+      <p>
+          Los datos personales y multimedia se conservarán durante el periodo necesario para cumplir las finalidades del servicio educativo. Posteriormente, serán eliminados de forma segura o anonimizados para fines estadísticos.
+      </p>
+
+      <h3>6. Seguridad y protección de la información</h3>
+      <ul>
+          <li>Cifrado de datos en tránsito y reposo</li>
+          <li>Control de accesos basado en roles</li>
+          <li>Copias de seguridad en entornos protegidos</li>
+          <li>Autenticación segura de usuarios</li>
+          <li>Supervisión y auditoría de accesos</li>
+          <li>Ningún usuario no autorizado podrá visualizar o modificar información</li>
+      </ul>
+
+      <h3>7. Acceso y derechos del titular de los datos</h3>
+      <ul>
+          <li>Acceder a los datos de su hijo/a almacenados en la Plataforma</li>
+          <li>Solicitar correcciones o eliminación de datos</li>
+          <li>Retirar su consentimiento en cualquier momento</li>
+          <li>Consultar cómo se está usando la información</li>
+          <li>Presentar reclamos sobre el tratamiento de datos</li>
+      </ul>
+
+      <h3>8. Compartición de datos</h3>
+      <p>
+          Los datos no serán compartidos con terceros, excepto cuando la ley lo exija, en emergencias para proteger la integridad del menor o con entidades educativas autorizadas.
+          En ningún caso se venderán datos personales o multimedia.
+      </p>
+
+      <h3>9. Uso de fotografías y material audiovisual</h3>
+      <p>
+          Las imágenes, videos y documentos de los menores se utilizan únicamente para reportes individualizados, comunicación interna con padres y registro de actividades educativas. Nunca se publicarán públicamente sin permiso explícito adicional.
+      </p>
+
+      <h3>10. Modificaciones a esta política</h3>
+      <p>
+          La institución podrá actualizar esta Política de Privacidad. Toda modificación será comunicada oportunamente a los usuarios.
+      </p>
+
+      <h3>11. Contacto</h3>
+      <p>
+          Responsable del Tratamiento de Datos:<br>
+          PRONOEI<br>
+          Correo: <a href="mailto:privacidad@pronoei.edu.pe">privacidad@pronoei.edu.pe</a><br>
+          Teléfono: [Teléfono]<br>
+          Dirección: [Dirección]
+      </p>
+      
+      <button class="modal-cerrar" id="cerrarModal">Cerrar</button>
+    </div>
+  </div>
+
   <footer class="pie">
     <p>© 2025 Sistema PRONOEI | Proyecto Interacción Humano-Computador</p>
   </footer>
 
   <script>
-    // Habilitar/deshabilitar el botón de login según el checkbox
+    // Habilitar/deshabilitar el botón de login según checkbox
     const checkbox = document.getElementById('aceptoPoliticas');
     const btnLogin = document.getElementById('btnLogin');
 
@@ -84,16 +223,34 @@
       btnLogin.disabled = !checkbox.checked;
     });
 
-    // Validación adicional en submit
     function validarPoliticas() {
       if (!checkbox.checked) {
         alert("Debes aceptar las Políticas de Privacidad para continuar.");
         return false;
       }
-      // Redirigir al panel después de validar
       window.location.href = 'panel_cuidador/panel_principal.html';
-      return false; // evitar que se recargue la página
+      return false;
     }
+
+    // Modal
+    const modal = document.getElementById('modalPoliticas');
+    const btnAbrir = document.getElementById('verPoliticas');
+    const btnCerrar = document.getElementById('cerrarModal');
+
+    btnAbrir.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'block';
+    });
+
+    btnCerrar.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
   </script>
 
 </body>
