@@ -50,6 +50,35 @@
     .modal-cerrar:hover {
       background-color: #a02121;
     }
+    
+   .politicas {
+      display: flex;
+      align-items: center;
+      gap: 6px; /* espacio mínimo entre checkbox y texto */
+      font-size: 0.95rem;
+    }
+
+    .politicas input[type="checkbox"] {
+      width: 16px;   /* ancho mínimo estándar */
+      height: 16px;  /* alto mínimo estándar */
+      margin: 0;     /* elimina margen extra */
+      flex-shrink: 0; /* evita que se reduzca aún más */
+    }
+
+    .politicas label {
+      margin: 0; /* elimina margen por defecto */
+      line-height: 1.2;
+    }
+
+    .politicas a {
+      color: #2e7d32; 
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .politicas a:hover {
+      color: #145214;
+    }
   </style>
 </head>
 <body>
